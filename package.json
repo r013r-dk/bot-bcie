@@ -1,0 +1,16 @@
+{
+  "name": "echobot-function",
+  "version": "1.0.0",
+  "description": "Bot en Azure Functions",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.29.1",
+    "axios": "^1.13.2",
+    "botbuilder": "^4.20.0",
+    "botbuilder-dialogs": "^4.23.3",
+    "botframework-connector": "^4.20.0",
+    "dotenv": "^16.3.1"
+  }
+}
