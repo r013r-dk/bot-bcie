@@ -202,6 +202,8 @@ print(gato.hacer_sonido())   # Salida: Michi dice: ¡Miau!
 La capacidad de diferentes clases de ser tratadas como instancias de la misma clase a través de una interfaz común.
 
 ```python
+import math
+
 class Figura:
     def area(self):
         pass
@@ -219,7 +221,7 @@ class Circulo(Figura):
         self.radio = radio
     
     def area(self):
-        return 3.14159 * self.radio ** 2
+        return math.pi * self.radio ** 2
 
 # Polimorfismo en acción
 figuras = [Rectangulo(5, 3), Circulo(4), Rectangulo(2, 8)]
@@ -228,7 +230,7 @@ for figura in figuras:
     print(f"Área: {figura.area()}")
 # Salida:
 # Área: 15
-# Área: 50.26544
+# Área: 50.26548245743669
 # Área: 16
 ```
 
@@ -309,6 +311,8 @@ print(libro1 == libro2) # True
 
 ```python
 class Temperatura:
+    ABSOLUTE_ZERO = -273.15  # Cero absoluto en Celsius
+    
     def __init__(self, celsius):
         self._celsius = celsius
     
@@ -318,7 +322,7 @@ class Temperatura:
     
     @celsius.setter
     def celsius(self, valor):
-        if valor < -273.15:
+        if valor < self.ABSOLUTE_ZERO:
             raise ValueError("La temperatura no puede ser menor al cero absoluto")
         self._celsius = valor
     
